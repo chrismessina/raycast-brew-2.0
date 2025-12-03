@@ -66,9 +66,7 @@ export function useBrewSearch(options: UseBrewSearchOptions): UseBrewSearchResul
         await showToast({
           style: Toast.Style.Failure,
           title: isLock ? "Brew is Busy" : "Search failed",
-          message: isLock
-            ? "Another brew process is running. Please wait and try again."
-            : message,
+          message: isLock ? "Another brew process is running. Please wait and try again." : message,
         });
       },
     },

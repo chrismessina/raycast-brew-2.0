@@ -4,13 +4,7 @@
 
 import { showToast, Toast } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
-import {
-  brewFetchOutdated,
-  OutdatedResults,
-  isBrewLockError,
-  getErrorMessage,
-  brewLogger,
-} from "../utils";
+import { brewFetchOutdated, OutdatedResults, isBrewLockError, getErrorMessage, brewLogger } from "../utils";
 import { preferences } from "../preferences";
 
 /**
@@ -39,9 +33,7 @@ export function useBrewOutdated() {
         await showToast({
           style: Toast.Style.Failure,
           title: isLock ? "Brew is Busy" : "Failed to fetch outdated packages",
-          message: isLock
-            ? "Another brew process is running. Please wait and try again."
-            : message,
+          message: isLock ? "Another brew process is running. Please wait and try again." : message,
           primaryAction: {
             title: "Retry",
             onAction: (toast) => {

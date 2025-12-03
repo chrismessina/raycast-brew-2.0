@@ -4,13 +4,7 @@
 
 import { showToast, Toast } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
-import {
-  brewFetchInstalled,
-  InstalledMap,
-  isBrewLockError,
-  getErrorMessage,
-  brewLogger,
-} from "../utils";
+import { brewFetchInstalled, InstalledMap, isBrewLockError, getErrorMessage, brewLogger } from "../utils";
 
 /**
  * Hook to fetch and cache installed brew packages.
@@ -38,9 +32,7 @@ export function useBrewInstalled() {
         await showToast({
           style: Toast.Style.Failure,
           title: isLock ? "Brew is Busy" : "Failed to fetch installed packages",
-          message: isLock
-            ? "Another brew process is running. Please wait and try again."
-            : message,
+          message: isLock ? "Another brew process is running. Please wait and try again." : message,
           primaryAction: {
             title: "Retry",
             onAction: (toast) => {
